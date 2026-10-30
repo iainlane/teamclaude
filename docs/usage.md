@@ -105,6 +105,8 @@ Warning: "me@example.com" is disabled, so requests will not route to it until th
 
 A manual switch does not override `switchThreshold`, even when the target has `allowExtraUsage: true` and paid credits available. If another account can serve normally, rotation uses that account. An over-threshold target can still be selected by exhausted-fleet fallback; the switch does not make that target eligible for normal rotation. Once rotation moves away, a later automatic return to the account does not restore the earlier manual choice.
 
+`preferExtraUsage: true` alongside `allowExtraUsage: true` permits an explicit switch to use the target subscription's fallback capacity. That is a separate opt-in; `allowExtraUsage` alone preserves the weak preference described above.
+
 Taking an account out of rotation, or moving it in the priority order, has a headless path too — the web equivalent of `teamclaude disable` / `enable` and `teamclaude priority --first` / `--last`, and what the browser dashboard's buttons call:
 
 ```bash

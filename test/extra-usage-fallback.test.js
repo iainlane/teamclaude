@@ -55,7 +55,7 @@ test('with every account spent, the opted-in account serves instead of null', ()
 
 test('strict advisor routes restrict extra-usage capacity and selection', () => {
   const am = new AccountManager([
-    oauth('subscription', { allowExtraUsage: true }),
+    oauth('subscription', { allowExtraUsage: true, preferExtraUsage: true }),
     { name: 'api', type: 'apikey', apiKey: 'api-key', priority: 100 },
   ], 0.98);
   setQuota(am.accounts[0], { unified7d: 1 });
